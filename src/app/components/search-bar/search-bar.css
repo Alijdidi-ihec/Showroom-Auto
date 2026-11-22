@@ -1,0 +1,210 @@
+.toolbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 24px 40px 8px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+    padding: 10px 16px;
+    background: #fff;
+    border: 1px solid #d5d5d5;
+    border-radius: 24px;
+    color: #777;
+}
+
+input {
+    all: unset;
+    flex: 1;
+    color: #111;
+    font-weight: 600;
+}
+
+.fav-filter {
+    all: unset;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border: 1px solid #d5d5d5;
+    border-radius: 24px;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.fav-filter.active {
+    background: #c0392b;
+    border-color: #c0392b;
+    color: #fff;
+}
+
+.result-count {
+    margin-left: auto;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.empty {
+    padding: 40px;
+    text-align: center;
+    color: #777;
+}
+
+.cars-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 28px;
+    padding: 24px 40px 48px;
+}
+
+.auto-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.auto-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+.photo {
+    position: relative;
+    background: #eee;
+}
+
+img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.fav {
+    all: unset;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.fav:hover {
+    transform: scale(1.1);
+}
+
+.fav.active {
+    color: #c0392b;
+}
+
+.stock {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    padding: 4px 12px;
+    border-radius: 14px;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.stock.ok {
+    background: #2e8b57;
+}
+
+.stock.low {
+    background: #e67e22;
+}
+
+.stock.out {
+    background: #c0392b;
+}
+
+.details {
+    flex: 1;
+    padding: 16px 18px 0;
+}
+
+.details p {
+    margin: 0;
+}
+
+.brand {
+    color: #888;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+h3 {
+    margin: 4px 0 8px;
+    font-size: 1.2rem;
+}
+
+.specs {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.price {
+    margin-top: 10px !important;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    padding: 16px 18px 18px;
+}
+
+.card-actions button {
+    all: unset;
+    flex: 1;
+    padding: 10px 0;
+    border-radius: 6px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-outline {
+    border: 1px solid #111 !important;
+}
+
+.btn-outline:hover {
+    background: #f1f1f1;
+}
+
+.btn-primary {
+    background: #111;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #c8a24a;
+    color: #111;
+}
+
+.btn-primary:disabled {
+    background: #ccc;
+    color: #888;
+    cursor: not-allowed;
+}

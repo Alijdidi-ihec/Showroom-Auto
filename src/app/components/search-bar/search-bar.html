@@ -1,0 +1,42 @@
+<div class="toolbar">
+    <div class="container">
+        <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+        <input type="text" #brand placeholder="Search by brand..." (input)="selectAutos(brand.value)">
+    </div>
+    <button class="fav-filter" [class.active]="onlyFavorites" (click)="toggleOnlyFavorites()">
+        <fa-icon [icon]="faHeart"></fa-icon> Favorites only
+    </button>
+    <span class="result-count">{{selectedAutos.length}} car(s)</span>
+</div>
+
+@if (selectedAutos.length === 0) {
+<p class="empty">No car found.</p>
+}
+
+<div class="cars-container">
+    @for(auto of selectedAutos; track auto.id){
+    <article class="auto-card">
+        <div class="photo">
+            <img [src]="`images/${auto.photo}`" [alt]="auto.brand + ' ' + auto.model">
+            <button class="fav" [class.active]="isFavorite(auto)" [attr.aria-label]="'Toggle favorite ' + auto.model"
+                (click)="onToggleFavorite.emit(auto)">
+                <fa-icon [icon]="faHeart"></fa-icon>
+            </button>
+            <span class="stock" [class]="'stock ' + stockLevel(auto.availability)">
+                {{stockLabel(auto.availability)}}
+            </span>
+        </div>
+        <div class="details">
+            <p class="brand">{{auto.brand}}</p>
+            <h3>{{auto.model}}</h3>
+            <p class="specs">Power : {{auto.power}}</p>
+            <p class="price">{{auto.price}} TND</p>
+        </div>
+        <div class="card-actions">
+            <button class="btn-outline" (click)="selectCar(auto)">See more</button>
+            <button class="btn-primary" [disabled]="auto.availability === 0"
+                (click)="onReserve.emit(auto)">Reserve</button>
+        </div>
+    </article>
+    }
+</div>

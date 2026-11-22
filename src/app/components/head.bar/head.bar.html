@@ -1,0 +1,13 @@
+<header class="header">
+    <div class="brand">SHOWROOM<span>AUTO</span></div>
+    <nav class="actions">
+        <span class="badge-link" title="Favorites">
+            <fa-icon [icon]="faHeart"></fa-icon> Favorites
+            <span class="count">{{favoritesCount}}</span>
+        </span>
+        <button class="badge-link cart-btn" (click)="onToggleCart.emit()">
+            <fa-icon [icon]="faCartShopping"></fa-icon> Reservations
+            <span class="count">{{cartCount}}</span>
+        </button>
+    </nav>
+</header>
